@@ -196,7 +196,8 @@ namespace Cashalot_Dev
                             TimeSpan.TryParse(times[0], out TimeSpan start) &&
                             TimeSpan.TryParse(times[1], out TimeSpan end))
                         {
-                            bool isOutage = start <= now && end >= now;
+                            bool isOutage = (start <= now && end >= now) ||
+                                            (start > end && (now >= start || now <= end));
                             cell.Style.BackColor = isOutage ? Color.Red : Color.White;
                         }
                     }
@@ -227,7 +228,8 @@ namespace Cashalot_Dev
                                 TimeSpan.TryParse(times[0], out TimeSpan start) &&
                                 TimeSpan.TryParse(times[1], out TimeSpan end))
                             {
-                                bool isOutage = start <= now && end >= now;
+                                bool isOutage = (start <= now && end >= now) ||
+                                                (start > end && (now >= start || now <= end));
                                 cell.Style.BackColor = isOutage ? Color.Red : Color.White;
                             }
                         }

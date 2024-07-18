@@ -39,6 +39,13 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtUpdateId = new System.Windows.Forms.TextBox();
+            this.btnUpdateAddress = new System.Windows.Forms.Button();
+            this.txtUpdateGroup = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtUpdateAddres = new System.Windows.Forms.TextBox();
             this.txtInsertGroup = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -58,7 +65,7 @@
             // 
             this.btnImport.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnImport.Location = new System.Drawing.Point(196, 28);
-            this.btnImport.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnImport.Margin = new System.Windows.Forms.Padding(4);
             this.btnImport.Name = "btnImport";
             this.btnImport.Size = new System.Drawing.Size(238, 76);
             this.btnImport.TabIndex = 0;
@@ -70,7 +77,7 @@
             // 
             this.btnGroupStatus.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnGroupStatus.Location = new System.Drawing.Point(497, 28);
-            this.btnGroupStatus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGroupStatus.Margin = new System.Windows.Forms.Padding(4);
             this.btnGroupStatus.Name = "btnGroupStatus";
             this.btnGroupStatus.Size = new System.Drawing.Size(238, 76);
             this.btnGroupStatus.TabIndex = 0;
@@ -82,7 +89,7 @@
             // 
             this.btnCurrentGroups.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnCurrentGroups.Location = new System.Drawing.Point(790, 28);
-            this.btnCurrentGroups.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCurrentGroups.Margin = new System.Windows.Forms.Padding(4);
             this.btnCurrentGroups.Name = "btnCurrentGroups";
             this.btnCurrentGroups.Size = new System.Drawing.Size(238, 76);
             this.btnCurrentGroups.TabIndex = 0;
@@ -96,8 +103,9 @@
             this.dataGridView.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.Location = new System.Drawing.Point(196, 218);
-            this.dataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView.Name = "dataGridView";
+            this.dataGridView.ReadOnly = true;
             this.dataGridView.RowHeadersVisible = false;
             this.dataGridView.RowHeadersWidth = 72;
             this.dataGridView.RowTemplate.Height = 31;
@@ -108,7 +116,7 @@
             // 
             this.txtStatus.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtStatus.Location = new System.Drawing.Point(196, 685);
-            this.txtStatus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtStatus.Margin = new System.Windows.Forms.Padding(4);
             this.txtStatus.Name = "txtStatus";
             this.txtStatus.Size = new System.Drawing.Size(970, 29);
             this.txtStatus.TabIndex = 2;
@@ -125,7 +133,7 @@
             "5",
             "6"});
             this.cmbGroupNum.Location = new System.Drawing.Point(1034, 50);
-            this.cmbGroupNum.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbGroupNum.Margin = new System.Windows.Forms.Padding(4);
             this.cmbGroupNum.Name = "cmbGroupNum";
             this.cmbGroupNum.Size = new System.Drawing.Size(79, 32);
             this.cmbGroupNum.TabIndex = 4;
@@ -134,7 +142,7 @@
             // 
             this.btnImportCorrectFile.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnImportCorrectFile.Location = new System.Drawing.Point(196, 109);
-            this.btnImportCorrectFile.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnImportCorrectFile.Margin = new System.Windows.Forms.Padding(4);
             this.btnImportCorrectFile.Name = "btnImportCorrectFile";
             this.btnImportCorrectFile.Size = new System.Drawing.Size(238, 81);
             this.btnImportCorrectFile.TabIndex = 5;
@@ -146,7 +154,7 @@
             // 
             this.btnExportJson.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnExportJson.Location = new System.Drawing.Point(497, 122);
-            this.btnExportJson.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnExportJson.Margin = new System.Windows.Forms.Padding(4);
             this.btnExportJson.Name = "btnExportJson";
             this.btnExportJson.Size = new System.Drawing.Size(238, 68);
             this.btnExportJson.TabIndex = 6;
@@ -160,7 +168,7 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(6);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1331, 871);
@@ -177,9 +185,9 @@
             this.tabPage1.Controls.Add(this.dataGridView);
             this.tabPage1.Controls.Add(this.txtStatus);
             this.tabPage1.Location = new System.Drawing.Point(4, 33);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(6);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(6);
             this.tabPage1.Size = new System.Drawing.Size(1323, 834);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Графік відключень";
@@ -187,6 +195,13 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.label5);
+            this.tabPage2.Controls.Add(this.txtUpdateId);
+            this.tabPage2.Controls.Add(this.btnUpdateAddress);
+            this.tabPage2.Controls.Add(this.txtUpdateGroup);
+            this.tabPage2.Controls.Add(this.label3);
+            this.tabPage2.Controls.Add(this.label4);
+            this.tabPage2.Controls.Add(this.txtUpdateAddres);
             this.tabPage2.Controls.Add(this.txtInsertGroup);
             this.tabPage2.Controls.Add(this.label2);
             this.tabPage2.Controls.Add(this.label1);
@@ -196,26 +211,101 @@
             this.tabPage2.Controls.Add(this.btnSelect);
             this.tabPage2.Controls.Add(this.txtSelect);
             this.tabPage2.Location = new System.Drawing.Point(4, 33);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(6);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(6);
             this.tabPage2.Size = new System.Drawing.Size(1323, 834);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "DB select";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // label5
+            // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(409, 164);
+            this.label5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(31, 25);
+            this.label5.TabIndex = 15;
+            this.label5.Text = "ID";
+            // 
+            // txtUpdateId
+            // 
+            this.txtUpdateId.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtUpdateId.Location = new System.Drawing.Point(399, 192);
+            this.txtUpdateId.Name = "txtUpdateId";
+            this.txtUpdateId.ReadOnly = true;
+            this.txtUpdateId.Size = new System.Drawing.Size(52, 29);
+            this.txtUpdateId.TabIndex = 14;
+            this.txtUpdateId.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // btnUpdateAddress
+            // 
+            this.btnUpdateAddress.Location = new System.Drawing.Point(181, 177);
+            this.btnUpdateAddress.Name = "btnUpdateAddress";
+            this.btnUpdateAddress.Size = new System.Drawing.Size(182, 49);
+            this.btnUpdateAddress.TabIndex = 13;
+            this.btnUpdateAddress.Text = "Оновити адресу";
+            this.btnUpdateAddress.UseVisualStyleBackColor = true;
+            this.btnUpdateAddress.Click += new System.EventHandler(this.btnUpdateAddress_Click);
+            // 
+            // txtUpdateGroup
+            // 
+            this.txtUpdateGroup.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtUpdateGroup.Location = new System.Drawing.Point(1025, 193);
+            this.txtUpdateGroup.Margin = new System.Windows.Forms.Padding(6);
+            this.txtUpdateGroup.Name = "txtUpdateGroup";
+            this.txtUpdateGroup.Size = new System.Drawing.Size(152, 29);
+            this.txtUpdateGroup.TabIndex = 12;
+            this.txtUpdateGroup.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(1074, 164);
+            this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(65, 25);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "Група";
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(656, 164);
+            this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(79, 25);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Адреса";
+            // 
+            // txtUpdateAddres
+            // 
+            this.txtUpdateAddres.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtUpdateAddres.Location = new System.Drawing.Point(472, 194);
+            this.txtUpdateAddres.Margin = new System.Windows.Forms.Padding(6);
+            this.txtUpdateAddres.Name = "txtUpdateAddres";
+            this.txtUpdateAddres.Size = new System.Drawing.Size(503, 29);
+            this.txtUpdateAddres.TabIndex = 9;
+            // 
             // txtInsertGroup
             // 
-            this.txtInsertGroup.Location = new System.Drawing.Point(920, 118);
-            this.txtInsertGroup.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtInsertGroup.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtInsertGroup.Location = new System.Drawing.Point(1024, 118);
+            this.txtInsertGroup.Margin = new System.Windows.Forms.Padding(6);
             this.txtInsertGroup.Name = "txtInsertGroup";
-            this.txtInsertGroup.Size = new System.Drawing.Size(180, 29);
+            this.txtInsertGroup.Size = new System.Drawing.Size(152, 29);
             this.txtInsertGroup.TabIndex = 7;
+            this.txtInsertGroup.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(970, 90);
+            this.label2.Location = new System.Drawing.Point(1074, 90);
             this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(65, 25);
@@ -224,8 +314,9 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(552, 90);
+            this.label1.Location = new System.Drawing.Point(656, 90);
             this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(79, 25);
@@ -234,8 +325,9 @@
             // 
             // txtInsertAddres
             // 
-            this.txtInsertAddres.Location = new System.Drawing.Point(295, 120);
-            this.txtInsertAddres.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtInsertAddres.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtInsertAddres.Location = new System.Drawing.Point(399, 120);
+            this.txtInsertAddres.Margin = new System.Windows.Forms.Padding(6);
             this.txtInsertAddres.Name = "txtInsertAddres";
             this.txtInsertAddres.Size = new System.Drawing.Size(576, 29);
             this.txtInsertAddres.TabIndex = 4;
@@ -243,8 +335,8 @@
             // btnInsertAddress
             // 
             this.btnInsertAddress.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnInsertAddress.Location = new System.Drawing.Point(77, 105);
-            this.btnInsertAddress.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnInsertAddress.Location = new System.Drawing.Point(181, 105);
+            this.btnInsertAddress.Margin = new System.Windows.Forms.Padding(6);
             this.btnInsertAddress.Name = "btnInsertAddress";
             this.btnInsertAddress.Size = new System.Drawing.Size(182, 52);
             this.btnInsertAddress.TabIndex = 3;
@@ -257,19 +349,21 @@
             this.dataGridViewSql.AllowUserToAddRows = false;
             this.dataGridViewSql.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dataGridViewSql.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewSql.Location = new System.Drawing.Point(295, 238);
-            this.dataGridViewSql.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.dataGridViewSql.Location = new System.Drawing.Point(287, 281);
+            this.dataGridViewSql.Margin = new System.Windows.Forms.Padding(6);
             this.dataGridViewSql.Name = "dataGridViewSql";
+            this.dataGridViewSql.ReadOnly = true;
             this.dataGridViewSql.RowHeadersVisible = false;
             this.dataGridViewSql.RowHeadersWidth = 72;
+            this.dataGridViewSql.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewSql.Size = new System.Drawing.Size(777, 436);
             this.dataGridViewSql.TabIndex = 2;
             // 
             // btnSelect
             // 
             this.btnSelect.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnSelect.Location = new System.Drawing.Point(77, 41);
-            this.btnSelect.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnSelect.Location = new System.Drawing.Point(181, 41);
+            this.btnSelect.Margin = new System.Windows.Forms.Padding(6);
             this.btnSelect.Name = "btnSelect";
             this.btnSelect.Size = new System.Drawing.Size(182, 42);
             this.btnSelect.TabIndex = 1;
@@ -280,8 +374,8 @@
             // txtSelect
             // 
             this.txtSelect.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtSelect.Location = new System.Drawing.Point(295, 41);
-            this.txtSelect.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtSelect.Location = new System.Drawing.Point(399, 41);
+            this.txtSelect.Margin = new System.Windows.Forms.Padding(6);
             this.txtSelect.Name = "txtSelect";
             this.txtSelect.Size = new System.Drawing.Size(774, 29);
             this.txtSelect.TabIndex = 0;
@@ -292,7 +386,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1331, 871);
             this.Controls.Add(this.tabControl1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(1122, 889);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -330,6 +424,13 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtInsertGroup;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtUpdateGroup;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtUpdateAddres;
+        private System.Windows.Forms.Button btnUpdateAddress;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtUpdateId;
     }
 }
 

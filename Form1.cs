@@ -14,6 +14,8 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Net;
+using System.Deployment.Internal;
+using System.Reflection;
 namespace Cashalot_Dev
 {
     public partial class Form1 : Form
@@ -23,6 +25,7 @@ namespace Cashalot_Dev
         public Form1()
         {
             InitializeComponent();
+            dataGridViewSql.SelectionChanged += dataGridViewSql_SelectionChanged;
         }
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -118,14 +121,20 @@ namespace Cashalot_Dev
 
             try
             {
+                if (sqlConnection == null || sqlConnection.State != ConnectionState.Open)
+                {
+                    MessageBox.Show("З'єднання з базою даних не встановлено.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
                 SqlFromDb dbSql = new SqlFromDb(sqlConnection);
-                dataGridViewSql.DataSource = dbSql.SelectFromTable(txtSelect.Text);
+                DataTable resultTable = dbSql.SelectFromTable(txtSelect.Text);
+                dataGridViewSql.DataSource = resultTable;
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Невірний запит: {ex.Message}", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
 
         }
 
@@ -133,14 +142,79 @@ namespace Cashalot_Dev
         {
             try
             {
+                int? groupId = null;
+                if (!string.IsNullOrEmpty(txtInsertGroup.Text))
+                {
+                    if (int.TryParse(txtInsertGroup.Text, out int parsedGroupId))
+                    {
+                        groupId = parsedGroupId;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Неправильний формат групи.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                }
                 SqlFromDb dbSql = new SqlFromDb(sqlConnection);
-                dbSql.InsertAddress(txtInsertAddres.Text, int.Parse(txtInsertGroup.Text));
+                dbSql.InsertAddress(txtInsertAddres.Text, groupId);
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Помилка придодаванні адреси: {ex.Message}", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+        }
+
+        public int Id;
+        private void dataGridViewSql_SelectionChanged(object sender, EventArgs e)
+        {
+            List<string> selectedColumnNames = new List<string>();
+
+            // Перевіряємо наявність рядків
+            if (dataGridViewSql.SelectedRows.Count > 0)
+            {
+                // Отримання виділеного рядка
+                DataGridViewRow selectedRow = dataGridViewSql.SelectedRows[0];
+                // Потрібно створити список згідно якого ми будемо заповнювати дані для оновлення Адоеси. В нашому випадку ще "Id, Address, GroupId"
+                foreach (DataGridViewCell cell in selectedRow.Cells)
+                {
+                    selectedColumnNames.Add(cell.OwningColumn.Name);
+                }
+                if (string.Join(", ", selectedColumnNames) == "Id, Address, GroupId")
+                {
+                    // Отримання даних з клітинок виділеного рядка
+                    txtUpdateId.Text = selectedRow.Cells["Id"].Value?.ToString();
+                    txtUpdateAddres.Text = selectedRow.Cells["Address"].Value?.ToString();
+                    txtUpdateGroup.Text = selectedRow.Cells["GroupId"].Value?.ToString();
+                }
+            }
+
+        }
+
+        private void btnUpdateAddress_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int? groupId = null;
+                if (!string.IsNullOrEmpty(txtUpdateGroup.Text))
+                {
+                    if (int.TryParse(txtUpdateGroup.Text, out int parsedGroupId))
+                    {
+                        groupId = parsedGroupId;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Неправильний формат групи.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                }
+                SqlFromDb dbSql = new SqlFromDb(sqlConnection);
+                dbSql.UpdateAddress(txtUpdateId.Text, txtUpdateAddres.Text, groupId);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Помилка придодаванні адреси: {ex.Message}", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
