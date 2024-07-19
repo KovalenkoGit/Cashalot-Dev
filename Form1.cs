@@ -143,9 +143,9 @@ namespace Cashalot_Dev
             try
             {
                 int? groupId = null;
-                if (!string.IsNullOrEmpty(txtInsertGroup.Text))
+                if (!string.IsNullOrEmpty(txtInsertAddrssGroup.Text))
                 {
-                    if (int.TryParse(txtInsertGroup.Text, out int parsedGroupId))
+                    if (int.TryParse(txtInsertAddrssGroup.Text, out int parsedGroupId))
                     {
                         groupId = parsedGroupId;
                     }
@@ -185,7 +185,7 @@ namespace Cashalot_Dev
                     // Отримання даних з клітинок виділеного рядка
                     txtUpdateId.Text = selectedRow.Cells["Id"].Value?.ToString();
                     txtUpdateAddres.Text = selectedRow.Cells["Address"].Value?.ToString();
-                    txtUpdateGroup.Text = selectedRow.Cells["GroupId"].Value?.ToString();
+                    txtUpdateAddressGroup.Text = selectedRow.Cells["GroupId"].Value?.ToString();
                 }
             }
 
@@ -196,9 +196,9 @@ namespace Cashalot_Dev
             try
             {
                 int? groupId = null;
-                if (!string.IsNullOrEmpty(txtUpdateGroup.Text))
+                if (!string.IsNullOrEmpty(txtUpdateAddressGroup.Text))
                 {
-                    if (int.TryParse(txtUpdateGroup.Text, out int parsedGroupId))
+                    if (int.TryParse(txtUpdateAddressGroup.Text, out int parsedGroupId))
                     {
                         groupId = parsedGroupId;
                     }
@@ -214,6 +214,38 @@ namespace Cashalot_Dev
             catch (Exception ex)
             {
                 MessageBox.Show($"Помилка придодаванні адреси: {ex.Message}", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnInsertSchedule_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int? groupId = null;
+                if (!string.IsNullOrEmpty(txtInsertScheduleGroup.Text))
+                {
+                    if (int.TryParse(txtInsertScheduleGroup.Text, out int parsedGroupId))
+                    {
+                        groupId = parsedGroupId;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Неправильний формат групи.", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    if (!TimeSpan.TryParseExact(txtInsertTimeFor.Text.Trim(), "hh\\:mm", CultureInfo.InvariantCulture, out TimeSpan startTime) ||
+                        !TimeSpan.TryParseExact(txtInsertTimeTo.Text.Trim(), "hh\\:mm", CultureInfo.InvariantCulture, out TimeSpan endTime))
+                    {
+                        MessageBox.Show("Невірний формат Часу");
+                        return;
+                    }
+                }
+                SqlFromDb dbSql = new SqlFromDb(sqlConnection);
+                dbSql.InsertSchedule(txtInsertDay.Text, txtInsertTimeFor.Text, txtInsertTimeTo.Text, groupId);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Помилка придодаванні графіку: {ex.Message}", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

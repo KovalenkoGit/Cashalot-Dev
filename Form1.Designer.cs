@@ -42,11 +42,11 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtUpdateId = new System.Windows.Forms.TextBox();
             this.btnUpdateAddress = new System.Windows.Forms.Button();
-            this.txtUpdateGroup = new System.Windows.Forms.TextBox();
+            this.txtUpdateAddressGroup = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtUpdateAddres = new System.Windows.Forms.TextBox();
-            this.txtInsertGroup = new System.Windows.Forms.TextBox();
+            this.txtInsertAddrssGroup = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtInsertAddres = new System.Windows.Forms.TextBox();
@@ -54,6 +54,15 @@
             this.dataGridViewSql = new System.Windows.Forms.DataGridView();
             this.btnSelect = new System.Windows.Forms.Button();
             this.txtSelect = new System.Windows.Forms.TextBox();
+            this.btnInsertSchedule = new System.Windows.Forms.Button();
+            this.txtInsertDay = new System.Windows.Forms.TextBox();
+            this.txtInsertTimeFor = new System.Windows.Forms.TextBox();
+            this.txtInsertTimeTo = new System.Windows.Forms.TextBox();
+            this.txtInsertScheduleGroup = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -195,14 +204,23 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.label10);
+            this.tabPage2.Controls.Add(this.label9);
+            this.tabPage2.Controls.Add(this.label8);
+            this.tabPage2.Controls.Add(this.label7);
+            this.tabPage2.Controls.Add(this.txtInsertScheduleGroup);
+            this.tabPage2.Controls.Add(this.txtInsertTimeTo);
+            this.tabPage2.Controls.Add(this.txtInsertTimeFor);
+            this.tabPage2.Controls.Add(this.txtInsertDay);
+            this.tabPage2.Controls.Add(this.btnInsertSchedule);
             this.tabPage2.Controls.Add(this.label5);
             this.tabPage2.Controls.Add(this.txtUpdateId);
             this.tabPage2.Controls.Add(this.btnUpdateAddress);
-            this.tabPage2.Controls.Add(this.txtUpdateGroup);
+            this.tabPage2.Controls.Add(this.txtUpdateAddressGroup);
             this.tabPage2.Controls.Add(this.label3);
             this.tabPage2.Controls.Add(this.label4);
             this.tabPage2.Controls.Add(this.txtUpdateAddres);
-            this.tabPage2.Controls.Add(this.txtInsertGroup);
+            this.tabPage2.Controls.Add(this.txtInsertAddrssGroup);
             this.tabPage2.Controls.Add(this.label2);
             this.tabPage2.Controls.Add(this.label1);
             this.tabPage2.Controls.Add(this.txtInsertAddres);
@@ -250,15 +268,15 @@
             this.btnUpdateAddress.UseVisualStyleBackColor = true;
             this.btnUpdateAddress.Click += new System.EventHandler(this.btnUpdateAddress_Click);
             // 
-            // txtUpdateGroup
+            // txtUpdateAddressGroup
             // 
-            this.txtUpdateGroup.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtUpdateGroup.Location = new System.Drawing.Point(1025, 193);
-            this.txtUpdateGroup.Margin = new System.Windows.Forms.Padding(6);
-            this.txtUpdateGroup.Name = "txtUpdateGroup";
-            this.txtUpdateGroup.Size = new System.Drawing.Size(152, 29);
-            this.txtUpdateGroup.TabIndex = 12;
-            this.txtUpdateGroup.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtUpdateAddressGroup.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtUpdateAddressGroup.Location = new System.Drawing.Point(1025, 193);
+            this.txtUpdateAddressGroup.Margin = new System.Windows.Forms.Padding(6);
+            this.txtUpdateAddressGroup.Name = "txtUpdateAddressGroup";
+            this.txtUpdateAddressGroup.Size = new System.Drawing.Size(152, 29);
+            this.txtUpdateAddressGroup.TabIndex = 12;
+            this.txtUpdateAddressGroup.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label3
             // 
@@ -291,15 +309,15 @@
             this.txtUpdateAddres.Size = new System.Drawing.Size(503, 29);
             this.txtUpdateAddres.TabIndex = 9;
             // 
-            // txtInsertGroup
+            // txtInsertAddrssGroup
             // 
-            this.txtInsertGroup.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtInsertGroup.Location = new System.Drawing.Point(1024, 118);
-            this.txtInsertGroup.Margin = new System.Windows.Forms.Padding(6);
-            this.txtInsertGroup.Name = "txtInsertGroup";
-            this.txtInsertGroup.Size = new System.Drawing.Size(152, 29);
-            this.txtInsertGroup.TabIndex = 7;
-            this.txtInsertGroup.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtInsertAddrssGroup.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtInsertAddrssGroup.Location = new System.Drawing.Point(1024, 118);
+            this.txtInsertAddrssGroup.Margin = new System.Windows.Forms.Padding(6);
+            this.txtInsertAddrssGroup.Name = "txtInsertAddrssGroup";
+            this.txtInsertAddrssGroup.Size = new System.Drawing.Size(152, 29);
+            this.txtInsertAddrssGroup.TabIndex = 7;
+            this.txtInsertAddrssGroup.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label2
             // 
@@ -349,7 +367,7 @@
             this.dataGridViewSql.AllowUserToAddRows = false;
             this.dataGridViewSql.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dataGridViewSql.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewSql.Location = new System.Drawing.Point(287, 281);
+            this.dataGridViewSql.Location = new System.Drawing.Point(284, 321);
             this.dataGridViewSql.Margin = new System.Windows.Forms.Padding(6);
             this.dataGridViewSql.Name = "dataGridViewSql";
             this.dataGridViewSql.ReadOnly = true;
@@ -379,6 +397,100 @@
             this.txtSelect.Name = "txtSelect";
             this.txtSelect.Size = new System.Drawing.Size(774, 29);
             this.txtSelect.TabIndex = 0;
+            // 
+            // btnInsertSchedule
+            // 
+            this.btnInsertSchedule.Location = new System.Drawing.Point(181, 263);
+            this.btnInsertSchedule.Name = "btnInsertSchedule";
+            this.btnInsertSchedule.Size = new System.Drawing.Size(182, 49);
+            this.btnInsertSchedule.TabIndex = 16;
+            this.btnInsertSchedule.Text = "Додати графік";
+            this.btnInsertSchedule.UseVisualStyleBackColor = true;
+            this.btnInsertSchedule.Click += new System.EventHandler(this.btnInsertSchedule_Click);
+            // 
+            // txtInsertDay
+            // 
+            this.txtInsertDay.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtInsertDay.Location = new System.Drawing.Point(382, 272);
+            this.txtInsertDay.Margin = new System.Windows.Forms.Padding(6);
+            this.txtInsertDay.Name = "txtInsertDay";
+            this.txtInsertDay.Size = new System.Drawing.Size(175, 29);
+            this.txtInsertDay.TabIndex = 17;
+            this.txtInsertDay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtInsertTimeFor
+            // 
+            this.txtInsertTimeFor.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtInsertTimeFor.Location = new System.Drawing.Point(569, 272);
+            this.txtInsertTimeFor.Margin = new System.Windows.Forms.Padding(6);
+            this.txtInsertTimeFor.Name = "txtInsertTimeFor";
+            this.txtInsertTimeFor.Size = new System.Drawing.Size(81, 29);
+            this.txtInsertTimeFor.TabIndex = 18;
+            this.txtInsertTimeFor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtInsertTimeTo
+            // 
+            this.txtInsertTimeTo.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtInsertTimeTo.Location = new System.Drawing.Point(662, 272);
+            this.txtInsertTimeTo.Margin = new System.Windows.Forms.Padding(6);
+            this.txtInsertTimeTo.Name = "txtInsertTimeTo";
+            this.txtInsertTimeTo.Size = new System.Drawing.Size(81, 29);
+            this.txtInsertTimeTo.TabIndex = 19;
+            this.txtInsertTimeTo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtInsertScheduleGroup
+            // 
+            this.txtInsertScheduleGroup.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtInsertScheduleGroup.Location = new System.Drawing.Point(755, 272);
+            this.txtInsertScheduleGroup.Margin = new System.Windows.Forms.Padding(6);
+            this.txtInsertScheduleGroup.Name = "txtInsertScheduleGroup";
+            this.txtInsertScheduleGroup.Size = new System.Drawing.Size(81, 29);
+            this.txtInsertScheduleGroup.TabIndex = 20;
+            this.txtInsertScheduleGroup.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label7
+            // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(435, 241);
+            this.label7.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(61, 25);
+            this.label7.TabIndex = 22;
+            this.label7.Text = "День";
+            // 
+            // label8
+            // 
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(670, 241);
+            this.label8.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(73, 25);
+            this.label8.TabIndex = 23;
+            this.label8.Text = "Час до";
+            // 
+            // label9
+            // 
+            this.label9.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(578, 241);
+            this.label9.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(61, 25);
+            this.label9.TabIndex = 24;
+            this.label9.Text = "Час з";
+            // 
+            // label10
+            // 
+            this.label10.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(761, 241);
+            this.label10.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(65, 25);
+            this.label10.TabIndex = 25;
+            this.label10.Text = "Група";
             // 
             // Form1
             // 
@@ -422,15 +534,24 @@
         private System.Windows.Forms.TextBox txtInsertAddres;
         private System.Windows.Forms.Button btnInsertAddress;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtInsertGroup;
+        private System.Windows.Forms.TextBox txtInsertAddrssGroup;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtUpdateGroup;
+        private System.Windows.Forms.TextBox txtUpdateAddressGroup;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtUpdateAddres;
         private System.Windows.Forms.Button btnUpdateAddress;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtUpdateId;
+        private System.Windows.Forms.TextBox txtInsertScheduleGroup;
+        private System.Windows.Forms.TextBox txtInsertTimeTo;
+        private System.Windows.Forms.TextBox txtInsertTimeFor;
+        private System.Windows.Forms.TextBox txtInsertDay;
+        private System.Windows.Forms.Button btnInsertSchedule;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
     }
 }
 

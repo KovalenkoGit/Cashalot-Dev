@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,6 +33,21 @@ namespace Cashalot_Dev
             MessageBox.Show("Додано записів "+rowsAdd.ToString());
         }
 
+        public void InsertSchedule(string day, string timeFor, string timeTo, int? groupId)
+        {
+            string query = "INSERT INTO [Schedule] (Day,StartTime,FinishTime,GroupId) VALUES (@Day, @StartTime, @FinishTime, @GroupId)";
+            int rowsAdd;
+            using (SqlCommand command = new SqlCommand(query, sqlConnection))
+            {
+                command.Parameters.AddWithValue("@Day", day);
+                command.Parameters.AddWithValue("@StartTime", timeFor);
+                command.Parameters.AddWithValue("@FinishTime", timeTo);
+                command.Parameters.AddWithValue("@GroupId", groupId.HasValue ? (object)groupId.Value : DBNull.Value);
+
+                rowsAdd = command.ExecuteNonQuery();
+            }
+            MessageBox.Show("Додано записів " + rowsAdd.ToString());
+        }
         public void UpdateAddress(string id, string address, int? groupId)
         {
             string query = "UPDATE [Address] SET Address = @Address, GroupId = @GroupId WHERE Id = @Id";
